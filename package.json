@@ -1,0 +1,44 @@
+{
+  "name": "test-api",
+  "version": "1.0.0",
+  "description": "test",
+  "main": "src/node/server.js",
+  "scripts": {
+    "production": "cross-env NODE_ENV=production node node/server.js",
+    "start": "nodemon src/node/server.js --exec babel-node --presets @babel/preset-env",
+    "build": "babel src -d dist",
+    "test": "cross-env NODE_ENV=test mocha --timeout 15000 --exit --compilers js:@babel/register --recursive ./test",
+    "docker": "docker build -t namespace/project:latest ."
+  },
+  "keywords": [
+  ],
+  "author": "sergiofilhow@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "cross-env": "^5.1.4",
+    "lodash": "^4.17.15",
+    "pg": "^7.8.2",
+    "sequelize": "^5.17.0",
+    "server-commons": "^0.0.6",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.46",
+    "@babel/core": "^7.0.0-beta.46",
+    "@babel/node": "^7.0.0-beta.46",
+    "@babel/plugin-proposal-class-properties": "^7.0.0-beta.46",
+    "@babel/plugin-proposal-decorators": "^7.0.0",
+    "@babel/preset-env": "^7.0.0-beta.46",
+    "@babel/register": "^7.0.0",
+    "babel-eslint": "^8.2.3",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-config-prettier": "^3.0.1",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-prettier": "^2.6.2",
+    "mocha": "^3.5.3",
+    "nodemon": "^1.18.4",
+    "prettier": "^1.14.2",
+    "server-commons-tester": "^0.0.5"
+  }
+}
